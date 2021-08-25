@@ -18,6 +18,10 @@ import { Pexeso } from "./components/pexeso/Pexeso";
 import { TicTacToe } from "./components/tic-tac-toe/TicTacToe";
 import { Todo } from "./components/todo/Todo";
 
+const HITHUB_REPO = "https://github.com/Tchomasek/IT-Absolvent-2";
+const GITHUB_ICON =
+  "https://www.spajk.cz/wp-content/uploads/2021/05/github-3215409-2673827.png";
+
 const GlobalStyle = createGlobalStyle`
   body {
     overflow: visible;
@@ -69,15 +73,8 @@ export default function App() {
               >
                 About me
               </Link>
-              <a
-                href="https://github.com/Tchomasek/IT-absolvent"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src="https://www.spajk.cz/wp-content/uploads/2021/05/github-3215409-2673827.png"
-                  style={{ width: "60px" }}
-                ></img>
+              <a href={HITHUB_REPO} target="_blank" rel="noreferrer">
+                <img src={GITHUB_ICON} style={{ width: "60px" }}></img>
               </a>
             </Ul>
           </nav>
