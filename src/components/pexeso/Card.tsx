@@ -2,15 +2,18 @@ import backside from "./cats/backside.jpg";
 import styled from "styled-components";
 import theme from "./theme";
 
-type MyTdProps = {
-  cat: string;
-};
-
-const MyTd = styled.td<MyTdProps>`
+const MyTd = styled.td`
   width: ${theme.sizeOfCard};
   height: ${theme.sizeOfCard};
-  background-image: url(${(props) => props.cat});
-  padding: 5px;
+  @media (max-width: 800px) {
+    width: 100px;
+    height: 100px;
+  }
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 type Props = {
@@ -22,7 +25,11 @@ type Props = {
 
 function Card(props: Props) {
   const picture = props.turned ? props.cat : backside;
-  return <MyTd cat={picture} onClick={props.handleClick}></MyTd>;
+  return (
+    <MyTd onClick={props.handleClick}>
+      <Img src={picture} />
+    </MyTd>
+  );
 }
 
 export default Card;

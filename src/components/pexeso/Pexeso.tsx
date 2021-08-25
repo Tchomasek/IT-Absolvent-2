@@ -182,8 +182,8 @@ export const Pexeso = () => {
 };
 
 const Table = styled.table`
-  border-collapse: separate;
-  border-spacing: 10px;
+  /* border-collapse: separate; */
+  /* border-spacing: 0px; */
 `;
 
 const DivWrapper = styled.div`
