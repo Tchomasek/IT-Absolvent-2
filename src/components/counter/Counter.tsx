@@ -42,23 +42,39 @@ export class Counter extends React.Component<{}, State> {
   }
   render() {
     return (
-      <WrapperDiv className="a">
+      <>
         <Helmet>
           <title>Counter</title>
         </Helmet>
-        <div className="cont" style={{ color: this.state.color }}>
-          <button onClick={this.decrement}>-1</button>
+        <WrapperDiv color={this.state.color}>
           <a>{this.state.counter}</a>
-          <button onClick={this.increment}>+1</button>
-        </div>
-      </WrapperDiv>
+          <ButtonWrapper>
+            <Button onClick={this.decrement}>-1</Button>
+            <Button onClick={this.increment}>+1</Button>
+          </ButtonWrapper>
+        </WrapperDiv>
+      </>
     );
   }
 }
 
-const WrapperDiv = styled.div`
+const ButtonWrapper = styled.div``;
+
+const Button = styled.button`
+  margin: 5px;
+  border-radius: 15px;
+`;
+
+type WrappedDivProps = {
+  color: string;
+};
+
+const WrapperDiv = styled.div<WrappedDivProps>`
   width: 100%;
   display: flex;
+  flex-direction: column;
+  font-size: 50px;
   align-items: center;
   justify-content: center;
+  color: ${(props) => props.color};
 `;

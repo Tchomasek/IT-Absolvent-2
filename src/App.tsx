@@ -18,7 +18,7 @@ import { Pexeso } from "./components/pexeso/Pexeso";
 import { TicTacToe } from "./components/tic-tac-toe/TicTacToe";
 import { Todo } from "./components/todo/Todo";
 
-const HITHUB_REPO = "https://github.com/Tchomasek/IT-Absolvent-2";
+const HITHUB_REPO_LINK = "https://github.com/Tchomasek/IT-Absolvent-2";
 const GITHUB_ICON =
   "https://www.spajk.cz/wp-content/uploads/2021/05/github-3215409-2673827.png";
 
@@ -44,6 +44,10 @@ const WrapperDiv = styled.div`
   flex-direction: column;
 `;
 
+const StyledLink = styled(Link)`
+  padding-right: 25px;
+`;
+
 export default function App() {
   return (
     <>
@@ -53,27 +57,29 @@ export default function App() {
         <WrapperDiv className="app">
           <nav>
             <Ul>
-              <Link
-                to="/"
-                style={{
-                  textDecoration: "none",
-                  fontSize: "25px",
-                  color: "white",
-                }}
-              >
-                My Apps
-              </Link>
-              <Link
-                to="/aboutme"
-                style={{
-                  textDecoration: "none",
-                  fontSize: "25px",
-                  color: "white",
-                }}
-              >
-                About me
-              </Link>
-              <a href={HITHUB_REPO} target="_blank" rel="noreferrer">
+              <div>
+                <StyledLink
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    fontSize: "25px",
+                    color: "white",
+                  }}
+                >
+                  My Apps
+                </StyledLink>
+                <Link
+                  to="/aboutme"
+                  style={{
+                    textDecoration: "none",
+                    fontSize: "25px",
+                    color: "white",
+                  }}
+                >
+                  About me
+                </Link>
+              </div>
+              <a href={HITHUB_REPO_LINK} target="_blank" rel="noreferrer">
                 <img src={GITHUB_ICON} style={{ width: "60px" }}></img>
               </a>
             </Ul>

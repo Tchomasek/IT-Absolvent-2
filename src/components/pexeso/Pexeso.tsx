@@ -173,18 +173,13 @@ export const Pexeso = () => {
         <title>Catxeso</title>
       </Helmet>
       <DivWrapper>
-        <Table>
+        <table>
           <tbody>{board}</tbody>
-        </Table>
+        </table>
       </DivWrapper>
     </>
   );
 };
-
-const Table = styled.table`
-  /* border-collapse: separate; */
-  /* border-spacing: 0px; */
-`;
 
 const DivWrapper = styled.div`
   display: flex;
