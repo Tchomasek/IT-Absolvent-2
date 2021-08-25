@@ -14,13 +14,10 @@ import { CounterRedux } from "./components/counter-redux/CounterRedux";
 import { HackerTyper } from "./components/hacker-typer/HackerTyper";
 import { Home } from "./components/home/Home";
 import { Jokes } from "./components/jokes/Jokes";
+import { Navbar } from "./components/navbar/Navbar";
 import { Pexeso } from "./components/pexeso/Pexeso";
 import { TicTacToe } from "./components/tic-tac-toe/TicTacToe";
 import { Todo } from "./components/todo/Todo";
-
-const HITHUB_REPO_LINK = "https://github.com/Tchomasek/IT-Absolvent-2";
-const GITHUB_ICON =
-  "https://www.spajk.cz/wp-content/uploads/2021/05/github-3215409-2673827.png";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -28,24 +25,9 @@ const GlobalStyle = createGlobalStyle`
     background: url(${backImage})
   }
 `;
-
-const Ul = styled.ul`
-  display: flex;
-  color: #ffffff;
-  background-color: #41649b;
-  list-style-type: none;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-`;
-
 const WrapperDiv = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const StyledLink = styled(Link)`
-  padding-right: 25px;
 `;
 
 export default function App() {
@@ -54,36 +36,8 @@ export default function App() {
       <GlobalStyle />
 
       <Router>
-        <WrapperDiv className="app">
-          <nav>
-            <Ul>
-              <div>
-                <StyledLink
-                  to="/"
-                  style={{
-                    textDecoration: "none",
-                    fontSize: "25px",
-                    color: "white",
-                  }}
-                >
-                  My Apps
-                </StyledLink>
-                <Link
-                  to="/aboutme"
-                  style={{
-                    textDecoration: "none",
-                    fontSize: "25px",
-                    color: "white",
-                  }}
-                >
-                  About me
-                </Link>
-              </div>
-              <a href={HITHUB_REPO_LINK} target="_blank" rel="noreferrer">
-                <img src={GITHUB_ICON} style={{ width: "60px" }}></img>
-              </a>
-            </Ul>
-          </nav>
+        <WrapperDiv>
+          <Navbar />
 
           <Switch>
             <Route path="/" exact>

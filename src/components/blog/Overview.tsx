@@ -5,10 +5,16 @@ import { Link } from "react-router-dom";
 import { ListGroup } from "react-bootstrap";
 import { URL_BASE } from "./Navbar";
 import React, { useContext } from "react";
+import styled from "styled-components";
 
 export const Overview = () => {
   const data = useContext(ArticleContext);
   const articles = data.articles;
+
+  const ZIndexListGroupItem = styled(ListGroup.Item)`
+    position: relative;
+    z-index: -1;
+  `;
 
   return (
     <>
@@ -18,7 +24,7 @@ export const Overview = () => {
       </Helmet>
       <ListGroup>
         {articles.map((article, index) => (
-          <ListGroup.Item key={index}>
+          <ZIndexListGroupItem key={index}>
             <Link
               key={article.id}
               to={URL_BASE + "article/" + article.id}
@@ -30,7 +36,7 @@ export const Overview = () => {
             >
               {article.header}
             </Link>
-          </ListGroup.Item>
+          </ZIndexListGroupItem>
         ))}
       </ListGroup>
     </>

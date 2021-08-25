@@ -9,12 +9,22 @@ type LinkCardProps = {
   link: string;
 };
 
+const ZIndexCard = styled(Card)`
+  position: relative;
+  z-index: -1;
+`;
+
+const ZIndexCardImage = styled(Card.Img)`
+  position: relative;
+  z-index: -1;
+`;
+
 export const LinkCard = (props: LinkCardProps) => {
   return (
     <>
       <Link to={props.link}>
-        <Card className="h-100 shadow-sm bg-white rounded">
-          <Card.Img variant="top" src={props.img} />
+        <ZIndexCard className="h-100 shadow-sm bg-white rounded">
+          <ZIndexCardImage variant="top" src={props.img} />
           <Card.Body
             style={{ justifyContent: "flex-end" }}
             className="d-flex flex-column "
@@ -23,7 +33,7 @@ export const LinkCard = (props: LinkCardProps) => {
               <TitleDiv>{props.name}</TitleDiv>
             </div>
           </Card.Body>
-        </Card>
+        </ZIndexCard>
       </Link>
     </>
   );
