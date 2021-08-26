@@ -32,7 +32,7 @@ const IconA = styled.a`
 `;
 
 const MyNavLink = styled(NavLink)`
-  font-size: 20px;
+  /* font-size: 15px; */
 `;
 
 export const Header = () => {

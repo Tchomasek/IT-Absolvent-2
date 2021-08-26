@@ -13,6 +13,7 @@ export type ArticleState = {
 export type ArticleContextState = {
   articles: ArticleState[];
   addNewArticle: (id: number, header: string, text: string) => void;
+  deleteArticle: (id: number) => void;
 };
 
 export const ArticleContext = React.createContext<ArticleContextState>(
@@ -33,8 +34,16 @@ export const BlogApp = () => {
     };
     setArticle((prevState) => [newArticle, ...prevState]);
   };
+
+  const deleteArticle = (id: number) => {
+    let newArticles = articles.filter((article) => {
+      return article.id !== id;
+    });
+    setArticle(newArticles);
+  };
+
   return (
-    <ArticleContext.Provider value={{ articles, addNewArticle }}>
+    <ArticleContext.Provider value={{ articles, addNewArticle, deleteArticle }}>
       <Helmet>
         <title>Blog</title>
       </Helmet>

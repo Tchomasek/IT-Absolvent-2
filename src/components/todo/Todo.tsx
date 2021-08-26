@@ -215,4 +215,5 @@ const TodoListDiv = styled.div`
 const ButtonsDiv = styled.div`
   display: flex;
   justify-content: center;
+  padding: 10px;
 `;
