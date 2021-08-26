@@ -17,13 +17,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import homeIcon from "./img/home.png";
+import personIcon from "./img/person.png";
 
 const PaddingDiv = styled.div`
   padding-bottom: 20px;
 `;
 
 const MyNavbar = styled(Navbar)`
-  background-color: "red";
+  background-color: #2a55cc;
+`;
+
+const IconA = styled.a`
+  padding-right: 30px;
 `;
 
 export const Header = () => {
@@ -33,15 +38,15 @@ export const Header = () => {
 
   return (
     <PaddingDiv>
-      <MyNavbar color="dark" dark expand="lg" className="p-3">
-        {/* <Link to="/"> */}
+      <MyNavbar dark expand="lg" className="p-3">
         <NavbarBrand>
-          {/* <a href={HITHUB_REPO_LINK} target="_blank" rel="noreferrer"> */}
-          <a href="/">
+          <IconA href="/">
             <img src={homeIcon} style={{ width: "60px" }}></img>
-          </a>
+          </IconA>
+          <IconA href="/aboutme">
+            <img src={personIcon} style={{ width: "60px" }}></img>
+          </IconA>
         </NavbarBrand>
-        {/* </Link> */}
 
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

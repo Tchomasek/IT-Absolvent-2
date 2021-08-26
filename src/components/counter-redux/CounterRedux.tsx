@@ -130,7 +130,11 @@ const Button = styled.button`
   width: 100px;
   height: 100px;
   margin: 5px;
+  border-radius: 15px;
+  font-size: x-large;
   @media (max-width: 450px) {
+    font-size: large;
+    border-radius: 10px;
     width: 50px;
     height: 50px;
   }

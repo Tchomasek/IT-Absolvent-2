@@ -21,7 +21,7 @@ const DivWrapper = styled.div`
 `;
 
 const InputCellsToWin = styled.input`
-  width: 30px;
+  width: 50px;
   text-align: center;
 `;
 
@@ -29,6 +29,10 @@ const CellsToWinWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 10px;
+`;
+
+const InputDiv = styled.div`
+  padding-left: 10px;
 `;
 
 function createGrid() {
@@ -129,11 +133,15 @@ export class TicTacToe extends Component<{}, State> {
         <DivWrapper>
           <CellsToWinWrapper>
             Cells to win:
-            <InputCellsToWin
-              type="number"
-              value={this.state.cellsToWin}
-              onChange={this.changeCellsToWin}
-            />
+            <InputDiv>
+              <InputCellsToWin
+                type="number"
+                value={this.state.cellsToWin}
+                onChange={this.changeCellsToWin}
+                min="3"
+                max="10"
+              />
+            </InputDiv>
           </CellsToWinWrapper>
           <table cellSpacing="0">
             <tbody>{board}</tbody>

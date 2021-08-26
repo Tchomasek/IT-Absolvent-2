@@ -1,6 +1,8 @@
 import { ErrorDiv } from "./ErrorDiv";
 import { Helmet } from "react-helmet";
 import { Joke } from "./Joke";
+import { ListGroup } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { URL_CATEGORY, URL_RANDOM } from "./config";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -11,6 +13,7 @@ const NUMBER_OF_ATTEMPTS = 20;
 export const Category = (props: { category: string }) => {
   const [catJokes, setCatJokes] = useState<string[]>([]);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getCatJokes = async () => {
@@ -22,44 +25,73 @@ export const Category = (props: { category: string }) => {
           const response = await fetch(URL_CATEGORY + props.category);
           const responseJson = await response.json();
           if (counter > NUMBER_OF_ATTEMPTS) {
+            setLoading(false);
             return;
           }
           if (jokesTemp.includes(responseJson.value)) {
-            return;
           } else {
             jokesTemp.push(responseJson.value);
             setCatJokes([...jokesTemp]);
           }
         }
-      } catch {
+      } catch (error) {
+        alert(error);
         setError(true);
       }
+      setLoading(false);
     };
     getCatJokes();
   }, []);
   return (
     <>
-      <WrapDiv>
-        <h2>{props.category} jokes</h2>
+      <Helmet>
+        <title>Chuck Norris Jokes - {props.category}</title>
+      </Helmet>
+      <WrapDiv className="a">
+        <TitleDiv>
+          <TitleH2>
+            {props.category.charAt(0).toUpperCase() + props.category.slice(1)}{" "}
+            jokes
+          </TitleH2>
+          {loading ? <Spinner animation="border" /> : null}
+        </TitleDiv>
         {error ? (
           <ErrorDiv>
             Unable to fetch data from ${URL_CATEGORY + props.category}
           </ErrorDiv>
         ) : null}
-        <div>
+        <JokesDiv>
           {catJokes.map((joke, index) => {
-            return <Joke key={index} joke={joke} />;
+            return (
+              <a key={index}>
+                {index === 0 ? null : <hr />}
+                <Joke joke={joke} />
+              </a>
+            );
           })}
-        </div>
+        </JokesDiv>
       </WrapDiv>
-      <Helmet>
-        <title>Chuck Norris Jokes - {props.category}</title>
-      </Helmet>
     </>
   );
 };
 
+const JokesDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const WrapDiv = styled.div`
   display: flex;
   flex-flow: column;
+  align-items: center;
+  width: 50%;
+`;
+
+const TitleH2 = styled.h2`
+  padding: 20px;
+`;
+
+const TitleDiv = styled.div`
+  display: flex;
+  align-items: center;
 `;

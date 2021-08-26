@@ -20,8 +20,8 @@ interface State {
 }
 
 const init_state = [
-  { id: 0, text: "Task 1", completed: false, enableEdit: false },
-  { id: 1, text: "Task 2", completed: true, enableEdit: false },
+  { id: 0, text: "Learn React", completed: true, enableEdit: false },
+  { id: 1, text: "Find a Job", completed: false, enableEdit: false },
 ];
 
 export class Todo extends React.Component<Props, State> {

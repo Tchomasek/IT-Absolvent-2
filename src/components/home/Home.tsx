@@ -31,11 +31,25 @@ export const Home = () => {
               </Col>
             ))}
           </Row>
+          <GithubDiv className="xxx">
+            Link to my Github Repo
+            <a href={HITHUB_REPO_LINK} target="_blank" rel="noreferrer">
+              <img src={GITHUB_ICON} style={{ width: "60px" }}></img>
+            </a>
+          </GithubDiv>
         </Container>
       </WrapperDiv>
     </>
   );
 };
+
+const GithubDiv = styled.div`
+  flex-direction: column;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const WrapperDiv = styled.div`
   width: 80%;
