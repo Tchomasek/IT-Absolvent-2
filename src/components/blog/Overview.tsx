@@ -7,14 +7,14 @@ import { URL_BASE } from "./Navbar";
 import React, { useContext } from "react";
 import styled from "styled-components";
 
+const ZIndexListGroupItem = styled(ListGroup.Item)`
+  position: relative;
+  z-index: 1;
+`;
+
 export const Overview = () => {
   const data = useContext(ArticleContext);
   const articles = data.articles;
-
-  const ZIndexListGroupItem = styled(ListGroup.Item)`
-    position: relative;
-    z-index: -1;
-  `;
 
   return (
     <>

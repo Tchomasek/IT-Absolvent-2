@@ -18,6 +18,8 @@ const Ul = styled.ul<UlProps>`
   align-items: center;
   height: 50px;
   @media (max-width: 768px) {
+    z-index: 2;
+
     flex-flow: column nowrap;
     background-color: #41649b;
     position: fixed;

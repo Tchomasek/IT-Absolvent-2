@@ -32,7 +32,7 @@ export const Navbar = () => {
             }}
             to={URL_BASE + "create"}
           >
-            Create new Blog Post
+            Create
           </Link>
         </Nav.Item>
       </Nav>

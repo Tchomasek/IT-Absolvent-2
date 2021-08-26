@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const ZIndexInputGroup = styled(InputGroup)`
   position: relative;
-  z-index: -1;
+  z-index: 1;
 `;
 
 export const Create = () => {
