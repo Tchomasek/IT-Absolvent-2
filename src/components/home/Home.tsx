@@ -5,6 +5,10 @@ import { links } from "./data";
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
+const HITHUB_REPO_LINK = "https://github.com/Tchomasek/IT-Absolvent-2";
+const GITHUB_ICON =
+  "https://www.spajk.cz/wp-content/uploads/2021/05/github-3215409-2673827.png";
+
 const GlobalStyle = createGlobalStyle`
       body {
         overflow: visible;

@@ -215,6 +215,10 @@ const TextInput = styled.input`
   font-size: 50px;
   width: 500px;
   height: 70px;
+  @media (max-width: 600px) {
+    width: 250px;
+    font-size: 25px;
+  }
 `;
 
 const TodoListDiv = styled.div`

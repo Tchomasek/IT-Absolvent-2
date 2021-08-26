@@ -11,6 +11,10 @@ const MyTd = styled.td`
   width: ${theme.widthOfCell};
   height: ${theme.heightOfCell};
   border: 1px solid ${theme.cellBorderColor};
+  @media (max-width: 500px) {
+    width: 30px;
+    height: 30px;
+  }
   &:hover {
     background-color: ${theme.cellHoverColor};
   }

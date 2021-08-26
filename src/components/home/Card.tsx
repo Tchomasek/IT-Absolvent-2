@@ -39,6 +39,10 @@ export const LinkCard = (props: LinkCardProps) => {
   );
 };
 
+const CardDiv = styled.div`
+  /* padding-top: 10px; */
+`;
+
 const A = styled.a`
   text-decoration: none;
 `;

@@ -130,6 +130,10 @@ const Button = styled.button`
   width: 100px;
   height: 100px;
   margin: 5px;
+  @media (max-width: 450px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const ValueP = styled.p`

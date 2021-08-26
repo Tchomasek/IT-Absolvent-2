@@ -12,9 +12,9 @@ import { BlogApp } from "./components/blog/PostApp";
 import { Counter } from "./components/counter/Counter";
 import { CounterRedux } from "./components/counter-redux/CounterRedux";
 import { HackerTyper } from "./components/hacker-typer/HackerTyper";
+import { Header } from "./components/navbar/Navbar";
 import { Home } from "./components/home/Home";
 import { Jokes } from "./components/jokes/Jokes";
-import { Navbar } from "./components/navbar/Navbar";
 import { Pexeso } from "./components/pexeso/Pexeso";
 import { TicTacToe } from "./components/tic-tac-toe/TicTacToe";
 import { Todo } from "./components/todo/Todo";
@@ -37,7 +37,7 @@ export default function App() {
 
       <Router>
         <WrapperDiv>
-          <Navbar />
+          <Header />
 
           <Switch>
             <Route path="/" exact>
