@@ -1,3 +1,4 @@
+import { Image } from "./Image";
 import backside from "./cats/backside.jpg";
 import styled from "styled-components";
 import theme from "./theme";
@@ -11,11 +12,6 @@ const MyTd = styled.td`
   }
 `;
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 type Props = {
   handleClick: () => void;
   value: number;
@@ -27,7 +23,7 @@ function Card(props: Props) {
   const picture = props.turned ? props.cat : backside;
   return (
     <MyTd onClick={props.handleClick}>
-      <Img src={picture} />
+      <Image src={picture} />
     </MyTd>
   );
 }
