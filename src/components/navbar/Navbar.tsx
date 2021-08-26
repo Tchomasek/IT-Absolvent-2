@@ -31,6 +31,10 @@ const IconA = styled.a`
   padding-right: 30px;
 `;
 
+const MyNavLink = styled(NavLink)`
+  font-size: 20px;
+`;
+
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,42 +57,42 @@ export const Header = () => {
           <Nav className="ms-auto " navbar>
             <NavItem>
               <Link to="/hacker-typer">
-                <NavLink>Hacker typer</NavLink>
+                <MyNavLink>Hacker typer</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/counter">
-                <NavLink>Counter</NavLink>
+                <MyNavLink>Counter</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/todo">
-                <NavLink>Todo</NavLink>
+                <MyNavLink>Todo</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/tic-tac-toe">
-                <NavLink>Tic Tac Toe</NavLink>
+                <MyNavLink>Tic Tac Toe</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/pexeso">
-                <NavLink>Pexeso</NavLink>
+                <MyNavLink>Pexeso</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/counter-redux">
-                <NavLink>Counter-Redux</NavLink>
+                <MyNavLink>Counter-Redux</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/jokes">
-                <NavLink>Chuck Norris Jokes</NavLink>
+                <MyNavLink>Chuck Norris Jokes</MyNavLink>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/blog">
-                <NavLink>Markdown Blog</NavLink>
+                <MyNavLink>Markdown Blog</MyNavLink>
               </Link>
             </NavItem>
           </Nav>
@@ -99,20 +103,7 @@ export const Header = () => {
 };
 
 export default Header;
+
 const Img = styled.img`
   margin-left: 0.5rem;
 `;
-
-// import { Burger } from "./Burger";
-// import { TopNav } from "./TopNav";
-// import styled from "styled-components";
-
-// const Nav = styled.nav``;
-
-// export const Navbar = () => {
-//   return (
-//     <Nav>
-//       <Burger />
-//     </Nav>
-//   );
-// };
