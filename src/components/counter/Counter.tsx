@@ -1,4 +1,5 @@
 import "./App.css";
+import { Button } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import React from "react";
 import randomColor from "randomcolor";
@@ -49,8 +50,8 @@ export class Counter extends React.Component<{}, State> {
         <WrapperDiv color={this.state.color}>
           <a>{this.state.counter}</a>
           <ButtonWrapper>
-            <Button onClick={this.decrement}>-1</Button>
-            <Button onClick={this.increment}>+1</Button>
+            <MyButton onClick={this.decrement}>-1</MyButton>
+            <MyButton onClick={this.increment}>+1</MyButton>
           </ButtonWrapper>
         </WrapperDiv>
       </>
@@ -60,9 +61,9 @@ export class Counter extends React.Component<{}, State> {
 
 const ButtonWrapper = styled.div``;
 
-const Button = styled.button`
+const MyButton = styled(Button)`
   margin: 5px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 `;
 
 type WrappedDivProps = {

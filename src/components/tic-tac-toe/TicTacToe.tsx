@@ -1,4 +1,6 @@
+import { Button } from "react-bootstrap";
 import { Component } from "react";
+import { FormControl, InputGroup } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import Square from "./Square";
 import styled from "styled-components";
@@ -18,21 +20,6 @@ const DivWrapper = styled.div`
   text-align: center;
   flex-flow: column;
   justify-content: center;
-`;
-
-const InputCellsToWin = styled.input`
-  width: 50px;
-  text-align: center;
-`;
-
-const CellsToWinWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-`;
-
-const InputDiv = styled.div`
-  padding-left: 10px;
 `;
 
 function createGrid() {
@@ -131,25 +118,39 @@ export class TicTacToe extends Component<{}, State> {
           <title>TicTacToe</title>
         </Helmet>
         <DivWrapper>
-          <CellsToWinWrapper>
-            Cells to win:
-            <InputDiv>
-              <InputCellsToWin
+          <InputWrapper>
+            <InputGroup className="mb-3">
+              <InputGroup.Text>Cells to win:</InputGroup.Text>
+              <FormControl
                 type="number"
                 value={this.state.cellsToWin}
                 onChange={this.changeCellsToWin}
                 min="3"
                 max="10"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
               />
-            </InputDiv>
-          </CellsToWinWrapper>
+            </InputGroup>
+          </InputWrapper>
           <table cellSpacing="0">
             <tbody>{board}</tbody>
           </table>
-          <button onClick={this.reset}>Reset</button>
-          <br />
+          <div className="d-grid gap-2">
+            <Button className="mt-3" onClick={this.reset}>
+              Reset
+            </Button>
+            <br />
+          </div>
         </DivWrapper>
       </>
     );
   }
 }
+
+const InputWrapper = styled.div`
+  display: flex;
+  width: 40%;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+`;

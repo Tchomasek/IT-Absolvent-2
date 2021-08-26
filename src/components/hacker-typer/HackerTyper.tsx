@@ -1,3 +1,4 @@
+import { Button } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import Modal from "react-modal";
 import React from "react";
@@ -86,13 +87,13 @@ export class HackerTyper extends React.Component<{}, State> {
             value={this.state.speed}
             onChange={(e) => this.setState({ speed: parseInt(e.target.value) })}
           />
-          <button onClick={this.closeSettings}>x</button>
+          <Button onClick={this.closeSettings}>x</Button>
         </Modal>
         <ContainerDiv id="cont"></ContainerDiv>
         <SettingsButtonDiv>
-          <button id="settingsButton" onClick={this.openSettings}>
+          <Button id="settingsButton" onClick={this.openSettings}>
             Settings
-          </button>
+          </Button>
         </SettingsButtonDiv>
       </div>
     );

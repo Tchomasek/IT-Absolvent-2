@@ -1,3 +1,4 @@
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import React from "react";
 import TodoItem from "./TodoItem";
@@ -159,29 +160,29 @@ export class Todo extends React.Component<Props, State> {
           <title>ToDo</title>
         </Helmet>
         <TodoListDiv className="todo-list">
-          <InputDiv>
-            <InputForm onSubmit={this.onSubmit}>
-              <TextInput
-                type="text"
-                placeholder="add new task"
-                autoFocus
-                value={this.state.newTodo}
-                onChange={this.handleInputChange}
-              />
-            </InputForm>
+          <MyInputGroup className="mb-3">
+            <FormControl
+              type="text"
+              placeholder="add new task"
+              autoFocus
+              value={this.state.newTodo}
+              onChange={this.handleInputChange}
+            />
             <Button onClick={this.onSubmit}>Submit</Button>
-          </InputDiv>
+          </MyInputGroup>
           {todoItems}
           <ButtonsDiv>
-            <Button onClick={() => this.setState({ filter: "all" })}>
+            <FilterButton onClick={() => this.setState({ filter: "all" })}>
               All
-            </Button>
-            <Button onClick={() => this.setState({ filter: "completed" })}>
+            </FilterButton>
+            <FilterButton
+              onClick={() => this.setState({ filter: "completed" })}
+            >
               Completed
-            </Button>
-            <Button onClick={() => this.setState({ filter: "active" })}>
+            </FilterButton>
+            <FilterButton onClick={() => this.setState({ filter: "active" })}>
               Active
-            </Button>
+            </FilterButton>
           </ButtonsDiv>
           <P>Edit task with doubleclick, press Enter to confirm.</P>
         </TodoListDiv>
@@ -190,35 +191,18 @@ export class Todo extends React.Component<Props, State> {
   }
 }
 
-const Button = styled.button`
+const FilterButton = styled(Button)`
   margin: 5px;
 `;
 
-const InputDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  align-items: center;
+const MyInputGroup = styled(InputGroup)`
+  margin: auto;
+  width: 50%;
 `;
 
 const P = styled.p`
   display: flex;
   justify-content: center;
-`;
-
-const InputForm = styled.form`
-  display: flex;
-  justify-content: center;
-`;
-
-const TextInput = styled.input`
-  font-size: 50px;
-  width: 500px;
-  height: 70px;
-  @media (max-width: 600px) {
-    width: 250px;
-    font-size: 25px;
-  }
 `;
 
 const TodoListDiv = styled.div`

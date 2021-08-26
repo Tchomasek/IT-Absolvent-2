@@ -103,7 +103,3 @@ export const Header = () => {
 };
 
 export default Header;
-
-const Img = styled.img`
-  margin-left: 0.5rem;
-`;

@@ -1,3 +1,4 @@
+import { Button as BootstrapButton } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import { createStore } from "redux";
 import { useDispatch, useSelector } from "react-redux";
@@ -75,29 +76,53 @@ export const CounterRedux = () => {
         </DivValue>
         <DivButtons>
           <DivButtons>
-            <Button onClick={() => dispatch(buttonFunctions().substract2())}>
+            <Button
+              variant="outline-primary"
+              onClick={() => dispatch(buttonFunctions().substract2())}
+            >
               -2
             </Button>
-            <Button onClick={() => dispatch(buttonFunctions().substract1())}>
+            <Button
+              variant="outline-primary"
+              onClick={() => dispatch(buttonFunctions().substract1())}
+            >
               -1
             </Button>
-            <Button onClick={() => dispatch(buttonFunctions().add1())}>
+            <Button
+              variant="outline-primary"
+              onClick={() => dispatch(buttonFunctions().add1())}
+            >
               +1
             </Button>
-            <Button onClick={() => dispatch(buttonFunctions().add2())}>
+            <Button
+              variant="outline-primary"
+              onClick={() => dispatch(buttonFunctions().add2())}
+            >
               +2
             </Button>
           </DivButtons>
-          <Button onClick={() => dispatch(buttonFunctions().power2())}>
+          <Button
+            variant="outline-primary"
+            onClick={() => dispatch(buttonFunctions().power2())}
+          >
             X<sup>2</sup>
           </Button>
-          <Button onClick={() => dispatch(buttonFunctions().powerself())}>
+          <Button
+            variant="outline-primary"
+            onClick={() => dispatch(buttonFunctions().powerself())}
+          >
             X<sup>X</sup>
           </Button>
-          <Button onClick={() => dispatch(buttonFunctions().divide2())}>
+          <Button
+            variant="outline-primary"
+            onClick={() => dispatch(buttonFunctions().divide2())}
+          >
             <span>{DIVISION_SYMBOL}</span>2
           </Button>
-          <Button onClick={() => dispatch(buttonFunctions().sqrt())}>
+          <Button
+            variant="outline-primary"
+            onClick={() => dispatch(buttonFunctions().sqrt())}
+          >
             <span>{SQUARE_ROOT_SYMBOL}</span>X
           </Button>
           <DivButtons>
@@ -126,7 +151,7 @@ const DivButtons = styled.div`
   text-align: center;
 `;
 
-const Button = styled.button`
+const Button = styled(BootstrapButton)`
   width: 100px;
   height: 100px;
   margin: 5px;

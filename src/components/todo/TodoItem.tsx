@@ -1,3 +1,4 @@
+import { Button } from "react-bootstrap";
 import styled from "styled-components";
 
 type todoProps = {
@@ -50,9 +51,9 @@ const TodoItem = ({
           {text}
         </p>
       )}
-      <button value={id} onClick={handleDelete}>
+      <Button variant="outline-secondary" value={id} onClick={handleDelete}>
         Delete
-      </button>
+      </Button>
     </TodoItemDiv>
   );
 };
