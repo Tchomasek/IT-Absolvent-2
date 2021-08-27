@@ -12,6 +12,15 @@ const MyTd = styled.td`
   }
 `;
 
+const Img = styled(Image)`
+  width: ${theme.sizeOfCard};
+  height: ${theme.sizeOfCard};
+  @media (max-width: 800px) {
+    width: 100px;
+    height: 100px;
+  }
+`;
+
 type Props = {
   handleClick: () => void;
   value: number;
@@ -22,8 +31,8 @@ type Props = {
 function Card(props: Props) {
   const picture = props.turned ? props.cat : backside;
   return (
-    <MyTd onClick={props.handleClick}>
-      <Image src={picture} />
+    <MyTd>
+      <Img src={picture} onClick={props.handleClick} />
     </MyTd>
   );
 }

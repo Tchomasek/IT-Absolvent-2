@@ -9,7 +9,7 @@ import cat8 from "./cats/cat8.jpg";
 
 const getCardsArray = () => {
   return [
-    { value: 1, turned: false, cat: cat1 },
+    { value: 1, turned: true, cat: cat1 },
     { value: 2, turned: false, cat: cat2 },
     { value: 3, turned: false, cat: cat3 },
     { value: 4, turned: false, cat: cat4 },
