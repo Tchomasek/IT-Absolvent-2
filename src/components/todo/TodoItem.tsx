@@ -22,9 +22,7 @@ const TodoItem = ({
   handleTextChange,
   enableEditToggle,
 }: todoProps) => {
-  const textStyle = completed
-    ? { fontSize: "40px", textDecoration: "line-through" }
-    : { fontSize: "40px" };
+  const textStyle = completed ? { textDecoration: "line-through" } : {};
   return (
     <TodoItemDiv className="todo-item">
       <CheckboxInput
@@ -47,31 +45,64 @@ const TodoItem = ({
           }}
         />
       ) : (
-        <p style={textStyle} onDoubleClick={() => enableEditToggle(id)}>
+        <TextP
+          style={textStyle}
+          onClick={() => handleCheckboxToggle(id)}
+          onDoubleClick={() => enableEditToggle(id)}
+        >
           {text}
-        </p>
+        </TextP>
       )}
-      <Button variant="outline-secondary" value={id} onClick={handleDelete}>
-        Delete
-      </Button>
+      <div>
+        <LeftButton variant="secondary" onClick={() => enableEditToggle(id)}>
+          Edit
+        </LeftButton>
+        <RightButton
+          variant="outline-secondary"
+          value={id}
+          onClick={handleDelete}
+        >
+          Delete
+        </RightButton>
+      </div>
     </TodoItemDiv>
   );
 };
 
+const LeftButton = styled(Button)`
+  border-radius: 10px 0px 0px 10px;
+`;
+
+const RightButton = styled(Button)`
+  border-radius: 0px 10px 10px 0px;
+`;
 const TodoItemDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  width: 65%;
+  margin: auto;
 `;
 
 const CheckboxInput = styled.input`
+  display: none;
   height: 30px;
   width: 30px;
 `;
 
 const TextInput = styled.input`
   font-size: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #b2bdbd;
+`;
+
+const TextP = styled.p`
+  font-size: 40px;
+  @media (max-width: 800px) {
+    font-size: 25px;
+  }
 `;
 
 export default TodoItem;

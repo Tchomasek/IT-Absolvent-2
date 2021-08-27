@@ -1,4 +1,4 @@
-import { Button, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import React from "react";
 import TodoItem from "./TodoItem";
@@ -159,28 +159,39 @@ export class Todo extends React.Component<Props, State> {
         <Helmet>
           <title>ToDo</title>
         </Helmet>
-        <TodoListDiv className="todo-list">
-          <MyInputGroup className="mb-3">
-            <FormControl
-              type="text"
-              placeholder="add new task"
-              autoFocus
-              value={this.state.newTodo}
-              onChange={this.handleInputChange}
-            />
-            <Button onClick={this.onSubmit}>Submit</Button>
-          </MyInputGroup>
+        <TodoListDiv>
+          <Form onSubmit={this.onSubmit}>
+            <MyInputGroup className="mb-3">
+              <FormControl
+                type="text"
+                placeholder="add new task"
+                autoFocus
+                value={this.state.newTodo}
+                onChange={this.handleInputChange}
+              />
+              <CreateButton variant="outline-dark" onClick={this.onSubmit}>
+                Create
+              </CreateButton>
+            </MyInputGroup>
+          </Form>
           {todoItems}
           <ButtonsDiv>
-            <FilterButton onClick={() => this.setState({ filter: "all" })}>
+            <FilterButton
+              variant="outline-dark"
+              onClick={() => this.setState({ filter: "all" })}
+            >
               All
             </FilterButton>
             <FilterButton
+              variant="outline-dark"
               onClick={() => this.setState({ filter: "completed" })}
             >
               Completed
             </FilterButton>
-            <FilterButton onClick={() => this.setState({ filter: "active" })}>
+            <FilterButton
+              variant="outline-dark"
+              onClick={() => this.setState({ filter: "active" })}
+            >
               Active
             </FilterButton>
           </ButtonsDiv>
@@ -191,8 +202,15 @@ export class Todo extends React.Component<Props, State> {
   }
 }
 
+const CreateButton = styled(Button)`
+  background-color: #4c515f;
+  color: white;
+`;
+
 const FilterButton = styled(Button)`
+  background-color: #4c515f;
   margin: 5px;
+  color: white;
 `;
 
 const MyInputGroup = styled(InputGroup)`
@@ -209,7 +227,11 @@ const TodoListDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 70%;
+  margin: auto;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const ButtonsDiv = styled.div`

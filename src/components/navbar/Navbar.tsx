@@ -5,14 +5,13 @@ import {
   DropdownToggle,
   Nav,
   NavItem,
-  NavLink,
   Navbar,
   NavbarBrand,
   NavbarText,
   NavbarToggler,
   UncontrolledDropdown,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -24,16 +23,27 @@ const PaddingDiv = styled.div`
 `;
 
 const MyNavbar = styled(Navbar)`
-  background-color: #2a55cc;
+  background-color: #4c515f;
 `;
 
 const IconA = styled.a`
   padding-right: 30px;
+
+  :hover {
+    opacity: 0.3;
+  }
 `;
 
-const MyNavLink = styled(NavLink)`
-  /* font-size: 15px; */
+const MyLink = styled(NavLink)`
+  text-decoration: none;
+  padding: 5px;
+  color: #e6dddd;
+  :hover {
+    color: #927676;
+  }
 `;
+
+const navbarHighlightColor = "#dffdff";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,56 +54,79 @@ export const Header = () => {
     <PaddingDiv>
       <MyNavbar dark expand="lg" className="p-3">
         <NavbarBrand>
-          <IconA href="/">
-            <img src={homeIcon} style={{ width: "60px" }}></img>
-          </IconA>
-          <IconA href="/aboutme">
-            <img src={personIcon} style={{ width: "60px" }}></img>
-          </IconA>
+          <MyLink to="/">
+            <IconA>
+              <img src={homeIcon} style={{ width: "35px" }}></img>
+            </IconA>
+          </MyLink>
+          <MyLink to="/aboutme">
+            <IconA>
+              <img src={personIcon} style={{ width: "35px" }}></img>
+            </IconA>
+          </MyLink>
         </NavbarBrand>
-
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto " navbar>
             <NavItem>
-              <Link to="/hacker-typer">
-                <MyNavLink>Hacker typer</MyNavLink>
-              </Link>
+              <MyLink
+                to="/hacker-typer"
+                activeStyle={{ color: navbarHighlightColor }}
+              >
+                Hacker typer
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/counter">
-                <MyNavLink>Counter</MyNavLink>
-              </Link>
+              <MyLink
+                to="/counter"
+                activeStyle={{ color: navbarHighlightColor }}
+              >
+                Counter
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/todo">
-                <MyNavLink>Todo</MyNavLink>
-              </Link>
+              <MyLink to="/todo" activeStyle={{ color: navbarHighlightColor }}>
+                Todo
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/tic-tac-toe">
-                <MyNavLink>Tic Tac Toe</MyNavLink>
-              </Link>
+              <MyLink
+                to="/tic-tac-toe"
+                activeStyle={{ color: navbarHighlightColor }}
+              >
+                Tic Tac Toe
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/pexeso">
-                <MyNavLink>Pexeso</MyNavLink>
-              </Link>
+              <MyLink
+                to="/pexeso"
+                activeStyle={{ color: navbarHighlightColor }}
+              >
+                Pexeso
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/counter-redux">
-                <MyNavLink>Counter-Redux</MyNavLink>
-              </Link>
+              <MyLink
+                to="/counter-redux"
+                activeStyle={{ color: navbarHighlightColor }}
+              >
+                Counter-Redux
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/jokes">
-                <MyNavLink>Chuck Norris Jokes</MyNavLink>
-              </Link>
+              <MyLink
+                to="/jokes"
+                activeStyle={{
+                  color: navbarHighlightColor,
+                }}
+              >
+                Chuck Norris Jokes
+              </MyLink>
             </NavItem>
             <NavItem>
-              <Link to="/blog">
-                <MyNavLink>Markdown Blog</MyNavLink>
-              </Link>
+              <MyLink to="/blog" activeStyle={{ color: navbarHighlightColor }}>
+                Markdown Blog
+              </MyLink>
             </NavItem>
           </Nav>
         </Collapse>

@@ -136,9 +136,13 @@ export class TicTacToe extends Component<{}, State> {
             <tbody>{board}</tbody>
           </table>
           <div className="d-grid gap-2">
-            <Button className="mt-3" onClick={this.reset}>
+            <ResetButton
+              variant="outline-dark"
+              className="mt-3"
+              onClick={this.reset}
+            >
               Reset
-            </Button>
+            </ResetButton>
             <br />
           </div>
         </DivWrapper>
@@ -146,6 +150,11 @@ export class TicTacToe extends Component<{}, State> {
     );
   }
 }
+
+const ResetButton = styled(Button)`
+  background-color: #4c515f;
+  color: white;
+`;
 
 const InputWrapper = styled.div`
   display: flex;

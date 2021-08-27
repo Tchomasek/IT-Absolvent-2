@@ -1,7 +1,13 @@
 import { Category } from "./Category";
 import { ErrorDiv } from "./ErrorDiv";
 import { Helmet } from "react-helmet";
-import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Route,
+  BrowserRouter as Router,
+  Switch,
+} from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { RandomJokes } from "./RandomJokes";
 import { URL_CATEGORIES } from "./config";
@@ -33,28 +39,29 @@ export const Jokes = () => {
       {error ? (
         <ErrorDiv>Unable to fetch data from ${URL_CATEGORIES}</ErrorDiv>
       ) : null}
-      <Nav variant="tabs" defaultActiveKey="/home">
+      <Nav variant="tabs">
         <Nav.Item>
-          <Nav.Link href={"/jokes"}>Random</Nav.Link>
+          <MyNavLink
+            to={"/jokes"}
+            activeStyle={{ textShadow: "1px 0px 0px black" }}
+            exact
+          >
+            Random
+          </MyNavLink>
         </Nav.Item>
         {categories.map((category, index) => (
           <Nav.Item key={index}>
-            <Nav.Link href={"/jokes/" + category}>
+            <MyNavLink
+              to={"/jokes/" + category}
+              activeStyle={{
+                textShadow: "1px 0px 0px black",
+              }}
+            >
               {category.charAt(0).toUpperCase() + category.slice(1)}
-            </Nav.Link>
+            </MyNavLink>
           </Nav.Item>
         ))}
       </Nav>
-      {/* <ul>
-        <li>
-          <Link to={"/jokes"}>Random</Link>
-        </li>
-        {categories.map((category, index) => (
-          <li key={index}>
-            <Link to={"/jokes/" + category}>{category}</Link>
-          </li>
-        ))}
-      </ul> */}
 
       <Switch>
         <Route path={"/jokes"} exact>
@@ -69,6 +76,12 @@ export const Jokes = () => {
     </WrapperDiv>
   );
 };
+
+const MyNavLink = styled(NavLink)`
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+`;
 
 const WrapperDiv = styled.div`
   display: flex;

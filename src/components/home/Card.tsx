@@ -9,42 +9,32 @@ type LinkCardProps = {
   link: string;
 };
 
-const ZIndexCard = styled(Card)`
-  position: relative;
-  z-index: -1;
-`;
-
-const ZIndexCardImage = styled(Card.Img)`
-  position: relative;
-  z-index: -1;
-`;
-
 export const LinkCard = (props: LinkCardProps) => {
   return (
     <>
-      <Link to={props.link}>
-        <ZIndexCard className="h-100 shadow-sm bg-white rounded">
-          <ZIndexCardImage variant="top" src={props.img} />
+      <MyLink to={props.link}>
+        <Card className="h-100 shadow-sm bg-white rounded">
+          <CardImage variant="top" src={props.img} />
           <Card.Body
             style={{ justifyContent: "flex-end" }}
             className="d-flex flex-column "
           >
-            <div className="d-flex ">
-              <TitleDiv>{props.name}</TitleDiv>
-            </div>
+            {props.name}
           </Card.Body>
-        </ZIndexCard>
-      </Link>
+        </Card>
+      </MyLink>
     </>
   );
 };
 
-const CardDiv = styled.div`
-  /* padding-top: 10px; */
+const CardImage = styled(Card.Img)`
+  :hover {
+    opacity: 0.5;
+  }
 `;
 
-const A = styled.a`
+const MyLink = styled(Link)`
   text-decoration: none;
+  font-size: 20px;
+  color: #422f2f;
 `;
-
-const TitleDiv = styled.div``;

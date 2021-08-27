@@ -50,8 +50,12 @@ export class Counter extends React.Component<{}, State> {
         <WrapperDiv color={this.state.color}>
           <a>{this.state.counter}</a>
           <ButtonWrapper>
-            <MyButton onClick={this.decrement}>-1</MyButton>
-            <MyButton onClick={this.increment}>+1</MyButton>
+            <MyButton variant="outline-dark" onClick={this.decrement}>
+              -1
+            </MyButton>
+            <MyButton variant="outline-dark" onClick={this.increment}>
+              +1
+            </MyButton>
           </ButtonWrapper>
         </WrapperDiv>
       </>
@@ -63,7 +67,6 @@ const ButtonWrapper = styled.div``;
 
 const MyButton = styled(Button)`
   margin: 5px;
-  /* border-radius: 15px; */
 `;
 
 type WrappedDivProps = {

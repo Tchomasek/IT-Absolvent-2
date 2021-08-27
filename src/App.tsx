@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./components/counter-redux/CounterRedux";
-import backImage from "./background.png";
 import styled, { createGlobalStyle } from "styled-components";
 
 // components
@@ -22,7 +21,7 @@ import { Todo } from "./components/todo/Todo";
 const GlobalStyle = createGlobalStyle`
   body {
     overflow: visible;
-    background: url(${backImage})
+    background-color: #ffffff//#b2bdbd
   }
 `;
 const WrapperDiv = styled.div`

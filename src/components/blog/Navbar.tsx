@@ -1,8 +1,10 @@
 import { ArticleContext } from "./PostApp";
 import { Create } from "./Create";
 import { Detail } from "./Detail";
-import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import { Nav } from "react-bootstrap";
+import { Nav, NavItem } from "reactstrap";
+import { NavLink } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
 import { Overview } from "./Overview";
 import { useContext } from "react";
 import styled from "styled-components";
@@ -13,39 +15,21 @@ export const Navbar = () => {
   return (
     <>
       <Nav fill variant="tabs" className="justify-content-center ">
-        <Nav.Item>
-          <Link
-            style={{
-              textDecoration: "none",
-              fontSize: "30px",
-            }}
-            to={URL_BASE}
-          >
+        <NavItem>
+          <MyNavLink exact to={URL_BASE} activeStyle={{ fontWeight: "bold" }}>
             Overview
-          </Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Link
-            style={{
-              textDecoration: "none",
-              fontSize: "30px",
-            }}
+          </MyNavLink>
+        </NavItem>
+        <NavItem>
+          <MyNavLink
             to={URL_BASE + "create"}
+            activeStyle={{ fontWeight: "bold" }}
           >
             Create
-          </Link>
-        </Nav.Item>
+          </MyNavLink>
+        </NavItem>
       </Nav>
-      {/* <nav>
-        <UlNavbar>
-          <li>
-            <Link to={URL_BASE}>Overview</Link>
-          </li>
-          <li>
-            <Link to={URL_BASE + "create"}>Create new Blog Post</Link>
-          </li>
-        </UlNavbar>
-      </nav> */}
+      <hr />
       <Switch>
         <Route exact path={URL_BASE}>
           <Overview />
@@ -63,7 +47,7 @@ export const Navbar = () => {
   );
 };
 
-const UlNavbar = styled.ul`
-  display: flex;
-  list-style-type: none;
+const MyNavLink = styled(NavLink)`
+  text-decoration: none;
+  font-size: 30px;
 `;

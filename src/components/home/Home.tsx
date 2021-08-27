@@ -2,12 +2,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import { LinkCard } from "./Card";
 import { links } from "./data";
+import Github from "./img/github.png";
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 const HITHUB_REPO_LINK = "https://github.com/Tchomasek/IT-Absolvent-2";
-const GITHUB_ICON =
-  "https://www.spajk.cz/wp-content/uploads/2021/05/github-3215409-2673827.png";
 
 const GlobalStyle = createGlobalStyle`
       body {
@@ -34,7 +33,7 @@ export const Home = () => {
           <GithubDiv className="xxx">
             Link to my Github Repo
             <a href={HITHUB_REPO_LINK} target="_blank" rel="noreferrer">
-              <img src={GITHUB_ICON} style={{ width: "60px" }}></img>
+              <GithubImg src={Github} />
             </a>
           </GithubDiv>
         </Container>
@@ -42,6 +41,13 @@ export const Home = () => {
     </>
   );
 };
+
+const GithubImg = styled.img`
+  width: 60px;
+  :hover {
+    opacity: 0.5;
+  }
+`;
 
 const GithubDiv = styled.div`
   flex-direction: column;
