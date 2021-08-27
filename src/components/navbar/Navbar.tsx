@@ -28,7 +28,6 @@ const MyNavbar = styled(Navbar)`
 
 const IconA = styled.a`
   padding-right: 30px;
-
   :hover {
     opacity: 0.3;
   }
