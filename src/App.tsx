@@ -21,7 +21,7 @@ import { Todo } from "./components/todo/Todo";
 const GlobalStyle = createGlobalStyle`
   body {
     overflow: visible;
-    background-color: #ffffff//#b2bdbd
+    background-color: #b2bdbd
   }
 `;
 const WrapperDiv = styled.div`
