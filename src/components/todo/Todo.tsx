@@ -44,6 +44,9 @@ export class Todo extends React.Component<Props, State> {
 
   onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (this.state.newTodo.replace(/ /g, "") === "") {
+      return;
+    }
     const newTodoArray = {
       id: this.state.todos.length,
       text: this.state.newTodo,

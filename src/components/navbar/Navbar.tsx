@@ -55,12 +55,12 @@ export const Header = () => {
         <NavbarBrand>
           <MyLink to="/">
             <IconA>
-              <img src={homeIcon} style={{ width: "35px" }}></img>
+              <img src={homeIcon} style={{ width: "30px" }}></img>
             </IconA>
           </MyLink>
           <MyLink to="/aboutme">
             <IconA>
-              <img src={personIcon} style={{ width: "35px" }}></img>
+              <img src={personIcon} style={{ width: "30px" }}></img>
             </IconA>
           </MyLink>
         </NavbarBrand>
