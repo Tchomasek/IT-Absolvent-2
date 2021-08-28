@@ -59,9 +59,9 @@ export const Header = () => {
             </IconA>
           </MyLink>
           <MyLink to="/aboutme">
-            <IconA>
+            {/* <IconA>
               <img src={personIcon} style={{ width: "30px" }}></img>
-            </IconA>
+            </IconA> */}
           </MyLink>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
