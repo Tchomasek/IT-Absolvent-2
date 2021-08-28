@@ -50,4 +50,5 @@ export const Navbar = () => {
 const MyNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: 30px;
+  color: black;
 `;

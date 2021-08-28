@@ -32,7 +32,10 @@ export const Overview = () => {
                 {article.header}
               </Link>
             </PostName>
-            <DeleteButton onClick={() => data.deleteArticle(article.id)}>
+            <DeleteButton
+              variant="secondary"
+              onClick={() => data.deleteArticle(article.id)}
+            >
               Delete
             </DeleteButton>
           </PostDiv>
@@ -44,7 +47,8 @@ export const Overview = () => {
 
 const DeleteButton = styled(Button)`
   border-radius: 0px;
-  height: 95%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
 `;
 
 const PostName = styled(ListGroup.Item)`
@@ -55,4 +59,5 @@ const PostDiv = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
+  padding-bottom: 1px;
 `;

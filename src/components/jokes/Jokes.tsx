@@ -81,6 +81,7 @@ const MyNavLink = styled(NavLink)`
   padding-left: 5px;
   padding-right: 5px;
   text-decoration: none;
+  color: black;
 `;
 
 const WrapperDiv = styled.div`

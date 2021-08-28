@@ -77,56 +77,59 @@ export const CounterRedux = () => {
         <DivButtons>
           <DivButtons>
             <Button
-              variant="outline-primary"
+              variant="outline-secondary"
               onClick={() => dispatch(buttonFunctions().substract2())}
             >
               -2
             </Button>
             <Button
-              variant="outline-primary"
+              variant="outline-secondary"
               onClick={() => dispatch(buttonFunctions().substract1())}
             >
               -1
             </Button>
             <Button
-              variant="outline-primary"
+              variant="outline-secondary"
               onClick={() => dispatch(buttonFunctions().add1())}
             >
               +1
             </Button>
             <Button
-              variant="outline-primary"
+              variant="outline-secondary"
               onClick={() => dispatch(buttonFunctions().add2())}
             >
               +2
             </Button>
           </DivButtons>
           <Button
-            variant="outline-primary"
+            variant="outline-secondary"
             onClick={() => dispatch(buttonFunctions().power2())}
           >
             X<sup>2</sup>
           </Button>
           <Button
-            variant="outline-primary"
+            variant="outline-secondary"
             onClick={() => dispatch(buttonFunctions().powerself())}
           >
             X<sup>X</sup>
           </Button>
           <Button
-            variant="outline-primary"
+            variant="outline-secondary"
             onClick={() => dispatch(buttonFunctions().divide2())}
           >
             <span>{DIVISION_SYMBOL}</span>2
           </Button>
           <Button
-            variant="outline-primary"
+            variant="outline-secondary"
             onClick={() => dispatch(buttonFunctions().sqrt())}
           >
             <span>{SQUARE_ROOT_SYMBOL}</span>X
           </Button>
           <DivButtons>
-            <Button onClick={() => dispatch(buttonFunctions().clear())}>
+            <Button
+              variant="secondary"
+              onClick={() => dispatch(buttonFunctions().clear())}
+            >
               C
             </Button>
           </DivButtons>
