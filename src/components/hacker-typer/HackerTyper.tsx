@@ -89,7 +89,7 @@ export class HackerTyper extends React.Component<{}, State> {
           />
           <Button onClick={this.closeSettings}>x</Button>
         </Modal>
-        <ContainerDiv id="cont"></ContainerDiv>
+        <ContainerDiv id="cont">Start Typing on your keyboard...</ContainerDiv>
         <SettingsButtonDiv>
           <Button id="settingsButton" onClick={this.openSettings}>
             Settings
@@ -102,7 +102,7 @@ export class HackerTyper extends React.Component<{}, State> {
 
 const ContainerDiv = styled.div`
   white-space: pre;
-  font-size: 35px;
+  font-size: 20px;
 `;
 
 const SettingsButtonDiv = styled.div`
