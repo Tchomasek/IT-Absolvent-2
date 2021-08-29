@@ -60,14 +60,14 @@ const DeleteButton = styled(Button)`
 `;
 
 const PostName = styled(ListGroup.Item)`
-  width: 100%;
+  width: 60%;
 `;
 
 const PostDiv = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  padding-bottom: 1px;
+  padding-bottom: 20px;
   @media (max-width: 500px) {
     font-size: 10px;
   }
