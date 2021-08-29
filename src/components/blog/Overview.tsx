@@ -1,6 +1,7 @@
 import { ArticleContext } from "./PostApp";
 import { ArticleState } from "./PostApp";
 import { Button, FormControl, InputGroup, ListGroup } from "react-bootstrap";
+import { Container } from "reactstrap";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { URL_BASE } from "./Navbar";

@@ -7,6 +7,12 @@ type squareProps = {
   value: "O" | "X" | null;
 };
 
+const Square = memo((props: squareProps) => {
+  return <MyTd onClick={props.handleClick}>{props.value}</MyTd>;
+});
+
+export default Square;
+
 const MyTd = styled.td`
   width: ${theme.widthOfCell};
   height: ${theme.heightOfCell};
@@ -19,9 +25,3 @@ const MyTd = styled.td`
     background-color: ${theme.cellHoverColor};
   }
 `;
-
-const Square = memo((props: squareProps) => {
-  return <MyTd onClick={props.handleClick}>{props.value}</MyTd>;
-});
-
-export default Square;

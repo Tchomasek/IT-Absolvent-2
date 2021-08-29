@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-const JokeDiv = styled.div`
-  padding: 2px;
-`;
-
 export const Joke = (props: { joke: string }) => {
   return (
     <>
@@ -11,3 +7,7 @@ export const Joke = (props: { joke: string }) => {
     </>
   );
 };
+
+const JokeDiv = styled.div`
+  padding: 2px;
+`;

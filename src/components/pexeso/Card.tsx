@@ -12,6 +12,17 @@ const MyTd = styled.td`
   }
 `;
 
+type ImgProps = {
+  turned: boolean;
+};
+
+type CardProps = {
+  handleClick: () => void;
+  value: number;
+  turned: boolean;
+  cat: string;
+};
+
 const Img = styled(Image)`
   width: ${theme.sizeOfCard};
   height: ${theme.sizeOfCard};
@@ -21,14 +32,7 @@ const Img = styled(Image)`
   }
 `;
 
-type Props = {
-  handleClick: () => void;
-  value: number;
-  turned: boolean;
-  cat: string;
-};
-
-function Card(props: Props) {
+function Card(props: CardProps) {
   const picture = props.turned ? props.cat : backside;
   return (
     <MyTd>

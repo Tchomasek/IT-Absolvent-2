@@ -1,29 +1,93 @@
 import {
   Collapse,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
   Nav,
   NavItem,
   Navbar,
   NavbarBrand,
-  NavbarText,
   NavbarToggler,
-  UncontrolledDropdown,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import homeIcon from "./img/home.png";
 import personIcon from "./img/person.png";
+
+export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <PaddingDiv>
+      <MyNavbar dark expand="lg" className="p-3">
+        <NavbarBrand>
+          <MyLink to="/">
+            <a>Tomáš Hrubý</a>
+          </MyLink>
+          <MyLink to="/aboutme">
+            {/* <IconA>
+              <img src={personIcon} style={{ width: "30px" }}></img>
+            </IconA> */}
+          </MyLink>
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ms-auto " navbar>
+            <NavItem>
+              <MyLink to="/hacker-typer" activeStyle={style}>
+                Hacker typer
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/counter" activeStyle={style}>
+                Counter
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/todo" activeStyle={style}>
+                Todo
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/tic-tac-toe" activeStyle={style}>
+                Tic Tac Toe
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/pexeso" activeStyle={style}>
+                Pexeso
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/counter-redux" activeStyle={style}>
+                Counter-Redux
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/jokes" activeStyle={style}>
+                Chuck Norris Jokes
+              </MyLink>
+            </NavItem>
+            <NavItem>
+              <MyLink to="/blog" activeStyle={style}>
+                Markdown Blog
+              </MyLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </MyNavbar>
+    </PaddingDiv>
+  );
+};
+
+export default Header;
 
 const PaddingDiv = styled.div`
   padding-bottom: 20px;
 `;
 
 const MyNavbar = styled(Navbar)`
-  background-color: #4c515f;
+  background-color: #8ba9fbc3;
 `;
 
 const IconA = styled.a`
@@ -36,102 +100,10 @@ const IconA = styled.a`
 const MyLink = styled(NavLink)`
   text-decoration: none;
   padding: 5px;
-  color: #e6dddd;
+  color: #030303;
   :hover {
-    color: #927676;
+    color: #595999;
   }
 `;
 
-const navbarHighlightColor = "#dffdff";
-
-export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
-  return (
-    <PaddingDiv>
-      <MyNavbar dark expand="lg" className="p-3">
-        <NavbarBrand>
-          <MyLink to="/">
-            <IconA>
-              <img src={homeIcon} style={{ width: "30px" }}></img>
-            </IconA>
-          </MyLink>
-          <MyLink to="/aboutme">
-            {/* <IconA>
-              <img src={personIcon} style={{ width: "30px" }}></img>
-            </IconA> */}
-          </MyLink>
-        </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ms-auto " navbar>
-            <NavItem>
-              <MyLink
-                to="/hacker-typer"
-                activeStyle={{ color: navbarHighlightColor }}
-              >
-                Hacker typer
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink
-                to="/counter"
-                activeStyle={{ color: navbarHighlightColor }}
-              >
-                Counter
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink to="/todo" activeStyle={{ color: navbarHighlightColor }}>
-                Todo
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink
-                to="/tic-tac-toe"
-                activeStyle={{ color: navbarHighlightColor }}
-              >
-                Tic Tac Toe
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink
-                to="/pexeso"
-                activeStyle={{ color: navbarHighlightColor }}
-              >
-                Pexeso
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink
-                to="/counter-redux"
-                activeStyle={{ color: navbarHighlightColor }}
-              >
-                Counter-Redux
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink
-                to="/jokes"
-                activeStyle={{
-                  color: navbarHighlightColor,
-                }}
-              >
-                Chuck Norris Jokes
-              </MyLink>
-            </NavItem>
-            <NavItem>
-              <MyLink to="/blog" activeStyle={{ color: navbarHighlightColor }}>
-                Markdown Blog
-              </MyLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </MyNavbar>
-    </PaddingDiv>
-  );
-};
-
-export default Header;
+const style = { color: "#ffffff", fontStyle: "italic" };

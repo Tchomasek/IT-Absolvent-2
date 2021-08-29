@@ -14,14 +14,6 @@ type State = {
   cellsToWin: number;
 };
 
-const DivWrapper = styled.div`
-  display: flex;
-  margin: auto;
-  text-align: center;
-  flex-flow: column;
-  justify-content: center;
-`;
-
 function createGrid() {
   return Array.from({ length: GRID_SIZE }).map(() =>
     Array.from({ length: GRID_SIZE }, () => null)
@@ -162,4 +154,12 @@ const InputWrapper = styled.div`
   @media (max-width: 500px) {
     width: 100%;
   }
+`;
+
+const DivWrapper = styled.div`
+  display: flex;
+  margin: auto;
+  text-align: center;
+  flex-flow: column;
+  justify-content: center;
 `;

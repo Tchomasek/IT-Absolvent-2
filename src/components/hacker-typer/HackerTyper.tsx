@@ -2,9 +2,16 @@ import { Button } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import Modal from "react-modal";
 import React from "react";
-import hackerBackground from "./hackerBackground.png";
 import styled, { createGlobalStyle } from "styled-components";
 import templateText from "./Text";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: black;
+    color: #0cee0c;
+    overflow: visible;
+  }
+`;
 
 interface State {
   text: string;
@@ -71,6 +78,7 @@ export class HackerTyper extends React.Component<{}, State> {
           isOpen={this.state.modalIsOpen}
           style={{
             content: {
+              color: "black",
               top: "35%",
               left: "50%",
               right: "auto",
@@ -81,15 +89,19 @@ export class HackerTyper extends React.Component<{}, State> {
             },
           }}
         >
-          Speed:
-          <input
-            type="number"
-            value={this.state.speed}
-            onChange={(e) => this.setState({ speed: parseInt(e.target.value) })}
-          />
-          <Button onClick={this.closeSettings}>x</Button>
+          <SpeedInputDiv>
+            <SpeedDiv>Speed:</SpeedDiv>
+            <SpeedInput
+              type="number"
+              value={this.state.speed}
+              onChange={(e) =>
+                this.setState({ speed: parseInt(e.target.value) })
+              }
+            />
+            <ModalButton onClick={this.closeSettings}>x</ModalButton>
+          </SpeedInputDiv>
         </Modal>
-        <ContainerDiv id="cont">Start Typing on your keyboard...</ContainerDiv>
+        <ContainerDiv id="cont">Start typing on your keyboard...</ContainerDiv>
         <SettingsButtonDiv>
           <Button id="settingsButton" onClick={this.openSettings}>
             Settings
@@ -100,6 +112,26 @@ export class HackerTyper extends React.Component<{}, State> {
   }
 }
 
+const SpeedDiv = styled.div`
+  padding-right: 10px;
+`;
+
+const SpeedInputDiv = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+
+const SpeedInput = styled.input`
+  height: 30px;
+`;
+
+const ModalButton = styled.button`
+  height: 30px;
+  border: none;
+  background-color: grey;
+  border-radius: 0px 10px 10px 0px;
+`;
+
 const ContainerDiv = styled.div`
   white-space: pre;
   font-size: 20px;
@@ -109,12 +141,4 @@ const SettingsButtonDiv = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-`;
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: url(${hackerBackground});
-    color: #0cee0c;
-    overflow: visible;
-  }
 `;

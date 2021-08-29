@@ -5,11 +5,6 @@ import { handleInputError } from "./handleInputError";
 import React, { MouseEvent, useContext, useState } from "react";
 import styled from "styled-components";
 
-const ZIndexInputGroup = styled(InputGroup)`
-  position: relative;
-  z-index: 1;
-`;
-
 export const Create = () => {
   const { articles, addNewArticle } = useContext(ArticleContext);
   const [header, setHeader] = useState("");
@@ -43,7 +38,7 @@ export const Create = () => {
         <title>Blog - Create new Article</title>
       </Helmet>
       <h1>Create Blog Post</h1>
-      <ZIndexInputGroup>
+      <InputGroup>
         <InputGroup.Text>Title</InputGroup.Text>
         <FormControl
           type="text"
@@ -51,10 +46,10 @@ export const Create = () => {
           value={header}
           onChange={(e) => setHeader(e.target.value)}
         />
-      </ZIndexInputGroup>
+      </InputGroup>
       <ErrorP>{headerError}</ErrorP>
 
-      <ZIndexInputGroup>
+      <InputGroup>
         <InputGroup.Text>Enter your MD here</InputGroup.Text>
         <FormControl
           as="textarea"
@@ -62,7 +57,7 @@ export const Create = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-      </ZIndexInputGroup>
+      </InputGroup>
       <form>
         <ErrorP>{textError}</ErrorP>
         <Button onClick={handleSubmit}>Submit</Button>

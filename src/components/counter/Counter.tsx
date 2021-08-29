@@ -1,4 +1,3 @@
-import "./App.css";
 import { Button } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import React from "react";
