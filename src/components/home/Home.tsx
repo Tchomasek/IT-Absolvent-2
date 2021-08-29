@@ -26,7 +26,12 @@ export const Home = () => {
           <Row xs={1} md={2} lg={3} xl={4} className="g-4">
             {links.map((data) => (
               <Col key={data.id}>
-                <LinkCard name={data.name} img={data.img} link={data.link} />
+                <LinkCard
+                  name={data.name}
+                  img={data.img}
+                  link={data.link}
+                  text={data.text}
+                />
               </Col>
             ))}
           </Row>

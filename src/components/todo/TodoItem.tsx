@@ -71,10 +71,16 @@ const TodoItem = ({
 
 const LeftButton = styled(Button)`
   border-radius: 10px 0px 0px 10px;
+  @media (max-width: 800px) {
+    font-size: 10px;
+  }
 `;
 
 const RightButton = styled(Button)`
   border-radius: 0px 10px 10px 0px;
+  @media (max-width: 800px) {
+    font-size: 10px;
+  }
 `;
 const TodoItemDiv = styled.div`
   display: flex;

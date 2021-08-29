@@ -7,6 +7,7 @@ type LinkCardProps = {
   name: string;
   img: string;
   link: string;
+  text: string;
 };
 
 export const LinkCard = (props: LinkCardProps) => {
@@ -19,13 +20,18 @@ export const LinkCard = (props: LinkCardProps) => {
             style={{ justifyContent: "flex-end" }}
             className="d-flex flex-column "
           >
-            {props.name}
+            <Title>{props.name}</Title>
+            <Card.Text>{props.text}</Card.Text>
           </Card.Body>
         </Card>
       </MyLink>
     </>
   );
 };
+
+const Title = styled(Card.Title)`
+  font-size: 35px;
+`;
 
 const CardImage = styled(Card.Img)`
   :hover {

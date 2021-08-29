@@ -87,7 +87,7 @@ const PaddingDiv = styled.div`
 `;
 
 const MyNavbar = styled(Navbar)`
-  background-color: #8ba9fbc3;
+  background-color: #c4e2ff;
 `;
 
 const IconA = styled.a`

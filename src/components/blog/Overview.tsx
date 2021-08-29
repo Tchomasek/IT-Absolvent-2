@@ -21,17 +21,12 @@ export const Overview = () => {
         {articles.map((article, index) => (
           <PostDiv key={index}>
             <PostName>
-              <Link
+              <PostLink
                 key={article.id}
                 to={URL_BASE + "article/" + article.id}
-                style={{
-                  textDecoration: "none",
-                  fontSize: "25px",
-                  color: "black",
-                }}
               >
                 {article.header}
-              </Link>
+              </PostLink>
             </PostName>
             <DeleteButton
               variant="secondary"
@@ -46,10 +41,22 @@ export const Overview = () => {
   );
 };
 
+const PostLink = styled(Link)`
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+`;
+
 const DeleteButton = styled(Button)`
   border-radius: 0px;
   height: 100%;
   border-radius: 0px 10px 10px 0px;
+  @media (max-width: 500px) {
+    font-size: 10px;
+  }
 `;
 
 const PostName = styled(ListGroup.Item)`
@@ -61,4 +68,7 @@ const PostDiv = styled.div`
   width: 100%;
   align-items: center;
   padding-bottom: 1px;
+  @media (max-width: 500px) {
+    font-size: 10px;
+  }
 `;
