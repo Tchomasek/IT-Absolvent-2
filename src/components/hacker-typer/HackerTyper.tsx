@@ -4,15 +4,6 @@ import Modal from "react-modal";
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import templateText from "./Text";
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: black;
-    color: #0cee0c;
-    overflow: visible;
-  }
-`;
-
 interface State {
   text: string;
   counter: number;
@@ -68,8 +59,15 @@ export class HackerTyper extends React.Component<{}, State> {
   }
 
   render() {
+    const GlobalStyle = createGlobalStyle`
+      body {
+        background-color: black;
+        color: #0cee0c;
+        overflow: visible;
+      }
+    `;
     return (
-      <div>
+      <>
         <Helmet>
           <title>HacterTyper</title>
         </Helmet>
@@ -107,7 +105,7 @@ export class HackerTyper extends React.Component<{}, State> {
             Settings
           </Button>
         </SettingsButtonDiv>
-      </div>
+      </>
     );
   }
 }

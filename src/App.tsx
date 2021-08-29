@@ -21,9 +21,10 @@ import { Todo } from "./components/todo/Todo";
 const GlobalStyle = createGlobalStyle`
   body {
     overflow: visible;
-    background-color: #ffffff
+    background-color: #ffffff;
   }
 `;
+
 const WrapperDiv = styled.div`
   display: flex;
   flex-direction: column;
