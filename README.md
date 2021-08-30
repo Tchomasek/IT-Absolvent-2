@@ -12,7 +12,7 @@ Fell like a hacker! With every keystroke, a piece of predefined text appears on 
 
 Simple class based component, that adds and substracts from counter. Every change also randomly changes color of the number.
 
-##ToDo
+## ToDo
 
 ![alt text](https://github.com/Tchomasek/IT-Absolvent-2/blob/master/src/components/home/img/Todo.png?raw=true)
 
