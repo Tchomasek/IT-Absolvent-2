@@ -46,4 +46,4 @@ This app calls an API that returns random jokes about legendary Chuck Norris. Th
 
 ![alt text](https://github.com/Tchomasek/IT-Absolvent-2/blob/master/src/components/home/img/Blog.png?raw=true)
 
-This app uses local storage, so the articles that you create stay there even after reloading the page.
+This app uses local storage, so the articles that you create stay there even after reloading the page. You can also add Markdown syntax and the app will format the text of the blogpost accordingly.
