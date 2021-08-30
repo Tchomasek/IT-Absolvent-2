@@ -16,7 +16,7 @@ Simple class based component, that adds and substracts from counter. Every chang
 
 ![alt text](https://github.com/Tchomasek/IT-Absolvent-2/blob/master/src/components/home/img/Todo.png?raw=true)
 
-You can add, edit, check tasks.
+You can add, edit, check and delete tasks.
 
 ## Tic-tac-toe
 
