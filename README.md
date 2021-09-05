@@ -5,7 +5,7 @@ This app consists of eight smaller apps that i have created during React IT Abso
 
 ![alt text](https://github.com/Tchomasek/IT-Absolvent-2/blob/master/src/components/home/img/HackerTyper.png?raw=true)
 
-Fell like a hacker! With every keystroke, a piece of predefined text appears on the screen, creating effect of typing complicated code relly fast. Additionaly, wanna-be-hacker can also set how many characters appears per keystroke. Using createGlobalStyle from Styled components library for setting different background color and color of text. Using Modal library for setting the speed of typing.
+Fell like a hacker! With every keystroke, a piece of predefined text appears on the screen, creating effect of typing complicated code really fast. Additionaly, wanna-be-hacker can also set how many characters appears per keystroke. Using createGlobalStyle from Styled components library for setting different background color and color of text. Using Modal library for setting the speed of typing.
 
 ## Counter
 ![alt text](https://github.com/Tchomasek/IT-Absolvent-2/blob/master/src/components/home/img/Counter.png?raw=true)
