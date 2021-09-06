@@ -35,7 +35,7 @@ export const Header = () => {
           <Nav className="ms-auto " navbar>
             <NavItem>
               <MyLink to="/hacker-typer" activeStyle={style}>
-                Hacker typer
+                HackerTyper
               </MyLink>
             </NavItem>
             <NavItem>
@@ -106,4 +106,4 @@ const MyLink = styled(NavLink)`
   }
 `;
 
-const style = { color: "#ffffff", fontStyle: "italic" };
+const style = { color: "#ffffff" };

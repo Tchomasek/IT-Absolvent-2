@@ -3,10 +3,6 @@ import backside from "./cats/backside.jpg";
 import styled from "styled-components";
 import theme from "./theme";
 
-type ImgProps = {
-  turned: boolean;
-};
-
 type CardProps = {
   handleClick: () => void;
   value: number;

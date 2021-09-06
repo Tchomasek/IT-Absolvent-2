@@ -4,8 +4,6 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import styled from "styled-components";
 
-interface Props {}
-
 export type todoItem = {
   id: number;
   text: string;
@@ -25,7 +23,7 @@ const init_state = [
   { id: 1, text: "Find a Job", completed: false, enableEdit: false },
 ];
 
-export class Todo extends React.Component<Props, State> {
+export class Todo extends React.Component<{}, State> {
   constructor(state: State) {
     super(state);
     this.state = {

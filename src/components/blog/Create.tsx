@@ -2,7 +2,14 @@ import { ArticleContext } from "./PostApp";
 import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import { handleInputError } from "./handleInputError";
-import React, { MouseEvent, useContext, useState } from "react";
+import { title } from "process";
+import React, {
+  MouseEvent,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styled from "styled-components";
 
 export const Create = () => {
@@ -11,6 +18,14 @@ export const Create = () => {
   const [text, setText] = useState("");
   const [headerError, setHeaderError] = useState("");
   const [textError, setTextError] = useState("");
+
+  const titleRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) {
+      titleRef.current.focus();
+    }
+  });
 
   const handleSubmit = (e: MouseEvent) => {
     e.preventDefault();
@@ -41,6 +56,7 @@ export const Create = () => {
       <InputGroup>
         <InputGroup.Text>Title</InputGroup.Text>
         <FormControl
+          ref={titleRef}
           type="text"
           name="header"
           value={header}

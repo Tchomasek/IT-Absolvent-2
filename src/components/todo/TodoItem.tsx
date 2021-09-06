@@ -101,7 +101,7 @@ const TextInput = styled.input`
   font-size: 40px;
   border: none;
   border-bottom: 2px solid black;
-  background-color: #b2bdbd;
+  background-color: #ffffff;
 `;
 
 const TextP = styled.p`
