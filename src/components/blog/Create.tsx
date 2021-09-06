@@ -1,15 +1,8 @@
 import { ArticleContext } from "./PostApp";
 import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import { MouseEvent, useContext, useEffect, useRef, useState } from "react";
 import { handleInputError } from "./handleInputError";
-import { title } from "process";
-import React, {
-  MouseEvent,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
 import styled from "styled-components";
 
 export const Create = () => {

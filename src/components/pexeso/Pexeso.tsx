@@ -103,6 +103,17 @@ const clickHandler = (args: ClickHandlerArg) => {
             });
             return newRow;
           });
+          let win = true;
+          for (let row of newGrid) {
+            for (let card of row) {
+              if (card.cat !== "") {
+                win = false;
+              }
+            }
+          }
+          if (win) {
+            alert("Congratulations, You Won!");
+          }
           return newGrid;
         });
       }, 500);
