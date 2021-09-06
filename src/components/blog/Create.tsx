@@ -25,7 +25,7 @@ export const Create = () => {
     if (titleRef.current) {
       titleRef.current.focus();
     }
-  });
+  }, []);
 
   const handleSubmit = (e: MouseEvent) => {
     e.preventDefault();
