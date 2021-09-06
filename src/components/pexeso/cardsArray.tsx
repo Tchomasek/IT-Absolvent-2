@@ -7,7 +7,7 @@ import cat6 from "./cats/cat6.jpg";
 import cat7 from "./cats/cat7.jpg";
 import cat8 from "./cats/cat8.jpg";
 
-const turned = true;
+const turned = false;
 
 const getCardsArray = () => {
   return [
